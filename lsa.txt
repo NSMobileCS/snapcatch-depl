@@ -1,0 +1,11 @@
+.
+..
+db.sqlite3
+.DS_Store
+lsa.txt
+ls.txt
+manage.py
+media
+snap
+snapcatch
+.vscode

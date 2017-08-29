@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<h1  id="title" >YOUR CATCHES</h1>
+{% for catch in caughtlist %}
+<div class='cards display centered'> //would like it if centered class gets implemented 
+    <img src="{% catch.pic %}">
+    <h3> {% catch.species %}</h3>
+    <p> {% catch.date_added %} </p>
+</div>
+{% endfor %}
+{% endlbock %}

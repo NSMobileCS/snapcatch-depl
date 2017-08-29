@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="{% static 'snap/js/geolocation-marker.js' %}"></script>
+<script src="{% static 'snap/js/main.js' %}"></script>
+
+
+<script>
+$(document).ready(function(){
+          $.get("http://api.inaturalist.org/v1/observations?photos=true&verifiable=true&year=2012%2C2013%2C2014%2C2015%2C2016&iconic_taxa=Mammalia&lat=37.375625&lng=-121.910147&radius=100&order=desc&order_by=created_at", function(res) {
+          
+          for(var i=0;i<30;i++){
+
+              var name = String(res.results[i].species_guess);
+              name=name.replace(/ /g, '%20');
+              
+        $("#mammal-pics").append("<a href=http://www.google.com/search?q=animal"+"%20"+name+""+"&btnI"+"><img src=" +''+ res.results[i].photos[0].url +''+" id="+''+res.results[i].id +''+"></a>");
+          }
+
+          },"json");
+
+
+          //reptiles
+
+          $.get("http://api.inaturalist.org/v1/observations?photos=true&verifiable=true&year=2012%2C2013%2C2014%2C2015%2C2016&iconic_taxa=Reptilia&lat=37.375625&lng=-121.910147&radius=100&order=desc&order_by=created_at", function(res) {
+          
+          for(var i=0;i<30;i++){
+
+              var name = String(res.results[i].species_guess);
+              name=name.replace(/ /g, '%20');
+              
+        $("#reptile-pics").append("<a href=http://www.google.com/search?q=animal"+"%20"+name+""+"&btnI"+"><img src=" +''+ res.results[i].photos[0].url +''+" id="+''+res.results[i].id +''+"></a>");
+          }
+
+          },"json");
+
+          //birds
+
+
+          $.get("http://api.inaturalist.org/v1/observations?photos=true&verifiable=true&year=2012%2C2013%2C2014%2C2015%2C2016&iconic_taxa=Aves&lat=37.375625&lng=-121.910147&radius=100&order=desc&order_by=created_at", function(res) {
+          
+          for(var i=0;i<30;i++){
+
+              var name = String(res.results[i].species_guess);
+              name=name.replace(/ /g, '%20');
+              
+        $("#bird-pics").append("<a href=http://www.google.com/search?q=animal"+"%20"+name+""+"&btnI"+"><img src=" +''+ res.results[i].photos[0].url +''+" id="+''+res.results[i].id +''+"></a>");
+          }
+
+          },"json");
+
+
+        });
+
+</script>
+{% endblock %}
+<!-- <script src="{% static 'snap/js/jquery.min.js' %}"></script> -->
+<!-- <script src="{% static 'snap/js/bootstrap.min.js' %}"></script> -->

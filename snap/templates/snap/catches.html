@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for='species'>'Species caught: </label>
+    <label for='hawk'>
+    <input type="radio" name="species" value='hawk'id='hawk'>
+    <input type="radio" name="species" value="Mountain lion" id="Mountain lion">
+    <label for="beaver">
+    <input type="radio" name="species" value="beaver" id='beaver'>
+    <label for='wolf'>        
+    <input type="radio" name="species" value='wolf' id='wolf'>
+    <label for='meerkat'>
+    <input type="radio" name="species" value='meerkat' id='meerkat'>
+    <input name='species' 
+    <label for='notes'>Notes: </label>
+        <input type="text" name='notes'>
+    <label for='myfile'>Upload Photo Catch: </label>        
+        <input type="file" name="myfile">
+    <button type="submit">Add Now</button>
+  </form>
+  
+
+  
+
+
+    <!-- 
+
+<form action='/caught' enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='Add Photo Catch' />
+</form> -->
+{% endblock %}

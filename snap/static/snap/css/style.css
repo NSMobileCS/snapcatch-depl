@@ -1,0 +1,71 @@
+body{
+  background-color:#F2ED6F;
+  font-family: 'Indie Flower', cursive;
+}
+
+#main{
+  border: 10x solid white;
+  height:400px;
+  width: 600px;
+  background-color: #CEE397;
+  margin-left:400px;
+  margin-top: 100px;
+  padding: 20px;
+
+}
+
+#map {
+    height: 400px;
+    width: 70%;
+    }
+
+.col-centered {
+  float: none;
+  margin: 0, auto;
+}
+
+    .nav-tabs>li.active>a{
+  background-color: #F2ED6F;
+  color:black;
+}
+
+.images{
+  height:50px;
+  width:200px;
+  display: block;
+  margin-left: 190px;
+  margin-top:50px;
+
+}
+#wiki-info{
+  height:700px;
+  width:80%;
+}
+#mammal-pics {
+  height:500px;
+  background-color: #F2ED6F;
+  color: black;
+}
+
+tab-pane active {
+  height:400px;
+}
+
+iframe{
+  height:400px;
+}
+figcaption{
+  display: inline-block;
+  width:70px;
+  margin:5px;
+  font-size: 1em;
+  vertical-align: top;
+}
+img {
+  vertical-align: top;
+  display: inline-block;
+  height:100px;
+  width:100px;
+  margin:10px;
+}
+
